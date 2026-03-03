@@ -1,223 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jamar Martin LLC — Private Operating Firm</title>
-  <meta name="description" content="Jamar Martin LLC is a privately held operating firm focused on the development, ownership, and management of independent ventures across digital and consumer markets." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jamar Martin LLC — Private Operating Firm</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #f0ede8;
+    --paper: #0f1115;
+    --muted: #8a8680;
+    --accent: #c8a96e;
+    --line: #222326;
+  }
+  html { background-color: #0f1115; }
+  body {
+    font-family: 'DM Mono', monospace;
+    background: #0f1115;
+    color: var(--ink);
+    font-size: 13px;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.04;
+    z-index: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  nav, .header-block, .overview, footer {
+    position: relative;
+    z-index: 1;
+  }
 
-    :root {
-      --bg: #0c0d0f;
-      --bg2: #111317;
-      --border: rgba(255,255,255,0.07);
-      --text: #e8e6e0;
-      --text-soft: #9a9690;
-      --text-muted: #5a5750;
-      --gold: #c8a96e;
-      --gold-dim: rgba(200,169,110,0.12);
-    }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 60px;
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .nav-links { display: flex; gap: 36px; list-style: none; }
+  .nav-links a {
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--ink); }
 
-    html { scroll-behavior: smooth; }
+  .header-block {
+    padding: 80px 60px 60px;
+    border-bottom: 1px solid var(--line);
+  }
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(48px, 7vw, 90px);
+    font-weight: 300;
+    line-height: 0.92;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 24px;
+  }
+  .header-desc {
+    max-width: 520px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.9;
+    margin-bottom: 40px;
+  }
+  .header-desc strong { color: var(--ink); font-weight: 400; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 28px;
+    background: var(--ink);
+    color: var(--paper);
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    transition: background 0.2s, gap 0.2s;
+  }
+  .btn:hover { background: var(--accent); gap: 20px; }
 
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-    }
+  .overview {
+    padding: 80px 60px;
+    border-bottom: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 60px;
+    align-items: start;
+    flex: 1;
+  }
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding-top: 4px;
+  }
+  .overview-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(20px, 2.2vw, 26px);
+    font-weight: 300;
+    line-height: 1.6;
+    color: var(--ink);
+    max-width: 680px;
+  }
 
-    /* NAV */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 60px; height: 68px;
-      background: rgba(12,13,15,0.9);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav-brand {
-      font-weight: 500; font-size: 13px; letter-spacing: 0.18em;
-      text-transform: uppercase; color: var(--text); text-decoration: none;
-    }
-    .nav-links { display: flex; gap: 40px; list-style: none; }
-    .nav-links a {
-      font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--text-soft); text-decoration: none; transition: color 0.25s;
-    }
-    .nav-links a:hover { color: var(--text); }
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 32px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    margin-top: auto;
+  }
+  footer a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  footer a:hover { color: var(--ink); }
+  .footer-links { display: flex; gap: 28px; }
 
-    /* HERO */
-    .hero {
-      min-height: 100vh; display: flex; flex-direction: column;
-      justify-content: center; padding: 140px 60px 100px;
-      position: relative; overflow: hidden;
-    }
-    .hero::before {
-      content: ''; position: absolute; inset: 0;
-      background-image:
-        linear-gradient(var(--border) 1px, transparent 1px),
-        linear-gradient(90deg, var(--border) 1px, transparent 1px);
-      background-size: 80px 80px;
-      mask-image: radial-gradient(ellipse 80% 80% at 40% 50%, black 20%, transparent 100%);
-      pointer-events: none;
-    }
-    .hero::after {
-      content: ''; position: absolute; top: 10%; right: -5%;
-      width: 700px; height: 700px;
-      background: radial-gradient(circle, rgba(200,169,110,0.055) 0%, transparent 65%);
-      pointer-events: none;
-    }
-    .hero-inner { max-width: 1080px; margin: 0 auto; width: 100%; position: relative; z-index: 1; }
-
-    .hero-eyebrow {
-      display: flex; align-items: center; gap: 16px; margin-bottom: 48px;
-      opacity: 0; animation: fadeUp 0.8s 0.1s ease forwards;
-    }
-    .hero-eyebrow::before {
-      content: ''; display: block; width: 36px; height: 1px; background: var(--gold); flex-shrink: 0;
-    }
-    .hero-eyebrow span { font-size: 11px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
-
-    .hero h1 {
-      font-family: 'Cormorant Garamond', serif; font-weight: 300;
-      font-size: clamp(60px, 9vw, 112px); line-height: 0.95;
-      color: var(--text); margin-bottom: 28px;
-      opacity: 0; animation: fadeUp 0.9s 0.28s ease forwards;
-    }
-    .hero h2 {
-      font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300;
-      font-size: clamp(20px, 2.6vw, 30px); color: var(--text-soft); letter-spacing: 0.03em; margin-bottom: 40px;
-      opacity: 0; animation: fadeUp 0.9s 0.44s ease forwards;
-    }
-    .hero-divider {
-      width: 56px; height: 1px; background: rgba(255,255,255,0.1); margin-bottom: 36px;
-      opacity: 0; animation: fadeUp 0.9s 0.52s ease forwards;
-    }
-    .hero-support {
-      font-size: 16px; font-weight: 300; color: var(--text-soft);
-      max-width: 460px; line-height: 1.8; margin-bottom: 56px;
-      opacity: 0; animation: fadeUp 0.9s 0.62s ease forwards;
-    }
-    .btn {
-      display: inline-flex; align-items: center; gap: 14px;
-      padding: 15px 36px; background: transparent; border: 1px solid var(--gold);
-      color: var(--gold); font-family: 'DM Sans', sans-serif; font-size: 12px;
-      font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase;
-      text-decoration: none; transition: background 0.3s; cursor: pointer;
-      opacity: 0; animation: fadeUp 0.9s 0.76s ease forwards;
-    }
-    .btn:hover { background: var(--gold-dim); }
-    .btn svg { transition: transform 0.25s; }
-    .btn:hover svg { transform: translateX(5px); }
-
-    /* OVERVIEW */
-    .overview { border-top: 1px solid var(--border); padding: 100px 60px; background: var(--bg2); }
-    .overview-inner {
-      max-width: 1080px; margin: 0 auto;
-      display: grid; grid-template-columns: 200px 1fr; gap: 64px; align-items: start;
-    }
-    .section-label {
-      font-size: 11px; font-weight: 500; letter-spacing: 0.2em;
-      text-transform: uppercase; color: var(--text-muted); padding-top: 8px;
-    }
-    .overview-text {
-      font-family: 'Cormorant Garamond', serif; font-weight: 300;
-      font-size: clamp(20px, 2.4vw, 26px); line-height: 1.7; color: var(--text-soft);
-    }
-
-    /* FOOTER */
-    footer {
-      border-top: 1px solid var(--border); padding: 36px 60px;
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .footer-copy { font-size: 12px; color: var(--text-muted); letter-spacing: 0.08em; }
-    .footer-nav { display: flex; gap: 32px; list-style: none; }
-    .footer-nav a {
-      font-size: 12px; color: var(--text-muted); text-decoration: none;
-      letter-spacing: 0.08em; transition: color 0.2s;
-    }
-    .footer-nav a:hover { color: var(--text-soft); }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(18px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (max-width: 768px) {
-      nav { padding: 0 24px; }
-      .nav-links { gap: 20px; }
-      .hero { padding: 120px 24px 80px; }
-      .overview { padding: 64px 24px; }
-      .overview-inner { grid-template-columns: 1fr; gap: 16px; }
-      footer { padding: 32px 24px; flex-direction: column; gap: 20px; text-align: center; }
-      .footer-nav { flex-wrap: wrap; justify-content: center; gap: 20px; }
-    }
-  </style>
+  @media (max-width: 768px) {
+    nav { padding: 20px 24px; }
+    .header-block { padding: 48px 24px 40px; }
+    .overview { padding: 48px 24px; grid-template-columns: 1fr; gap: 16px; }
+    footer { padding: 24px; flex-direction: column; gap: 16px; text-align: center; }
+    .footer-links { flex-wrap: wrap; justify-content: center; }
+  }
+</style>
 </head>
 <body>
 
-  <nav>
-    <a href="/" class="nav-brand">Jamar Martin LLC</a>
-    <ul class="nav-links">
-      <li><a href="/ventures">Ventures</a></li>
-      <li><a href="/contact">Contact</a></li>
-    </ul>
-  </nav>
+<nav>
+  <a href="/" class="nav-logo">Jamar Martin LLC</a>
+  <ul class="nav-links">
+    <li><a href="/ventures">Ventures</a></li>
+    <li><a href="/contact">Contact</a></li>
+  </ul>
+</nav>
 
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-eyebrow"><span>Private Operating Firm</span></div>
-      <h1>Jamar<br>Martin LLC</h1>
-      <h2>Private Operating Firm</h2>
-      <div class="hero-divider"></div>
-      <p class="hero-support">
-        Building and managing independent brands across digital and consumer sectors. Managed by Jamar Martin.
-      </p>
-      <a href="/ventures" class="btn">
-        View Ventures
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </a>
-    </div>
-  </section>
+<div class="header-block">
+  <h1>Digital<br>Surplus</h1>
+  <p class="header-desc">Lead generation for B2B companies.</p>
+  <a href="https://digital.jamarmartin.com" class="btn">Explore Digital Surplus →</a>
+</div>
 
-  <section class="overview">
-    <div class="overview-inner">
-      <p class="section-label">Overview</p>
-      <p class="overview-text">
-        Jamar Martin LLC is a privately held operating firm focused on the development, ownership, and management of independent ventures across digital and consumer markets.
-      </p>
-    </div>
-  </section>
+<section class="overview">
+  <div class="section-label">Overview</div>
+  <p class="overview-text">
+    Jamar Martin LLC is a privately held operating company focused on the development, ownership, and management of independent ventures across digital and consumer markets.
+  </p>
+</section>
 
-  <footer>
-    <span class="footer-copy">© 2025 Jamar Martin LLC</span>
-    <ul class="footer-nav">
-      <li><a href="/ventures">Ventures</a></li>
-      <li><a href="/contact">Contact</a></li>
-      <li><a href="/privacy-policy">Privacy Policy</a></li>
-      <li><a href="/terms-of-service">Terms of Service</a></li>
-    </ul>
-  </footer>
+<footer>
+  <span>© 2026 Jamar Martin LLC. All rights reserved.</span>
+  <div class="footer-links">
+    <a href="/ventures">Ventures</a>
+    <a href="/contact">Contact</a>
+    <a href="/privacy-policy">Privacy Policy</a>
+    <a href="/terms-of-service">Terms of Service</a>
+  </div>
+</footer>
 
 </body>
 </html>
-```
-
-**Design decisions:**
-- Dark luxury aesthetic — deep charcoal background, warm gold accents — appropriate for a private operating firm
-- **Cormorant Garamond** (display) + **DM Sans** (UI) — refined pairing, nothing generic
-- Subtle grid overlay and gold glow orb add depth without clutter
-- Staggered fade-up animations on page load feel polished
-- Overview section uses a two-column label + text layout — editorial and clean
-- Fully responsive down to mobile
-
-Ready to build the other pages (ventures, contact, privacy, terms) whenever you are.
