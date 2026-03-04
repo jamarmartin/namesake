@@ -52,6 +52,20 @@ nav {
   transition: color 0.2s, border-color 0.2s;
 }
 .nav-cta:hover { color: var(--accent-light); border-color: var(--accent-light); }
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.nav-parent {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-parent:hover { color: var(--ink); }
 .hero {
   padding: 80px 48px 0;
   display: grid;
@@ -316,7 +330,7 @@ nav {
   transition: color 0.5s;
   user-select: none;
 }
-.inquire:hover .inquire-text { color: #323238; }
+.inquire:hover .inquire-text { color: #52525a; }
 .inquire-btn {
   display: inline-flex;
   align-items: center;
@@ -372,7 +386,10 @@ footer a:hover { color: var(--ink); }
 
 <nav>
   <a href="/" class="nav-logo">DS<span>+</span></a>
-  <a href="https://jamarmartin.com/contact" class="nav-cta">Get in touch</a>
+  <div class="nav-right">
+    <a href="https://jamarmartin.com" class="nav-parent">← jamarmartin.com</a>
+    <a href="https://jamarmartin.com/contact" class="nav-cta">Get in touch</a>
+  </div>
 </nav>
 
 <section class="hero">
@@ -550,12 +567,17 @@ footer a:hover { color: var(--ink); }
     );
     countEl.textContent =
       String(current + 1).padStart(2,'0') + ' / ' + String(totalSlides).padStart(2,'0');
-    if (current === 0) {
+    if (window.innerWidth > 900) {
+      if (current === 0) {
+        heroLeft.style.opacity = '1';
+        heroLeft.style.transform = 'translateY(0)';
+      } else {
+        heroLeft.style.opacity = '0';
+        heroLeft.style.transform = 'translateY(8px)';
+      }
+    } else {
       heroLeft.style.opacity = '1';
       heroLeft.style.transform = 'translateY(0)';
-    } else {
-      heroLeft.style.opacity = '0';
-      heroLeft.style.transform = 'translateY(8px)';
     }
   }
 
