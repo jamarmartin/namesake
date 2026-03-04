@@ -3,151 +3,132 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jamar Martin LLC — Private Operating Firm</title>
+<title>Jamar Martin</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
   :root {
-    --ink: #f0ede8;
-    --paper: #0f1115;
-    --muted: #8a8680;
+    --bg: #1a1a1c;
+    --ink: #e8e6e2;
+    --muted: #666462;
     --accent: #c8a96e;
-    --line: #222326;
+    --line: #2a2a2d;
   }
-  html { background-color: #0f1115; }
+
+  html, body { height: 100%; }
+
   body {
-    font-family: 'DM Mono', monospace;
-    background: #0f1115;
+    font-family: 'Cormorant Garamond', serif;
+    background: var(--bg);
     color: var(--ink);
-    font-size: 13px;
     line-height: 1.6;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    position: relative;
-  }
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    opacity: 0.04;
-    z-index: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  }
-  nav, .header-block, .overview, footer {
-    position: relative;
-    z-index: 1;
   }
 
   nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 28px 60px;
+    padding: 28px 48px;
     border-bottom: 1px solid var(--line);
   }
+
   .nav-logo {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 16px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
     text-decoration: none;
     color: var(--ink);
   }
-  .nav-links { display: flex; gap: 36px; list-style: none; }
+
+  .nav-links { display: flex; gap: 32px; list-style: none; }
   .nav-links a {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
     text-decoration: none;
     color: var(--muted);
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+    font-size: 17px;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    text-transform: none;
     transition: color 0.2s;
   }
   .nav-links a:hover { color: var(--ink); }
 
-  .header-block {
-    padding: 80px 60px 60px;
-    border-bottom: 1px solid var(--line);
+  main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 80px 48px;
   }
-  h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(48px, 7vw, 90px);
-    font-weight: 300;
-    line-height: 0.92;
-    letter-spacing: -0.02em;
-    color: var(--ink);
-    margin-bottom: 24px;
+
+  .hero {
+    display: flex;
+    justify-content: flex-end;
   }
-  .header-desc {
+
+  .hero-inner {
     max-width: 520px;
-    color: var(--muted);
-    font-size: 13px;
-    line-height: 1.9;
-    margin-bottom: 40px;
+    text-align: right;
   }
-  .header-desc strong { color: var(--ink); font-weight: 400; }
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    padding: 14px 28px;
-    background: var(--ink);
-    color: var(--paper);
-    text-decoration: none;
+
+  .hero-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(19px, 1.9vw, 23px);
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--ink);
+    margin-bottom: 28px;
+  }
+
+  .venture-line {
+    font-family: 'DM Mono', monospace;
     font-size: 11px;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    transition: background 0.2s, gap 0.2s;
-  }
-  .btn:hover { background: var(--accent); gap: 20px; }
-
-  .overview {
-    padding: 80px 60px;
-    border-bottom: 1px solid var(--line);
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 60px;
-    align-items: start;
-    flex: 1;
-  }
-  .section-label {
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
     color: var(--muted);
-    padding-top: 4px;
   }
-  .overview-text {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(20px, 2.2vw, 26px);
-    font-weight: 300;
-    line-height: 1.6;
+
+  .venture-line a {
     color: var(--ink);
-    max-width: 680px;
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 1px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .venture-line a:hover {
+    color: var(--accent);
+    border-color: var(--accent);
   }
 
   footer {
     border-top: 1px solid var(--line);
-    padding: 32px 60px;
+    padding: 24px 48px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-family: 'DM Mono', monospace;
     font-size: 11px;
     color: var(--muted);
-    letter-spacing: 0.08em;
-    margin-top: auto;
+    letter-spacing: 0.07em;
   }
+
   footer a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
   footer a:hover { color: var(--ink); }
   .footer-links { display: flex; gap: 28px; }
 
-  @media (max-width: 768px) {
+  @media (max-width: 640px) {
     nav { padding: 20px 24px; }
-    .header-block { padding: 48px 24px 40px; }
-    .overview { padding: 48px 24px; grid-template-columns: 1fr; gap: 16px; }
-    footer { padding: 24px; flex-direction: column; gap: 16px; text-align: center; }
+    main { padding: 60px 24px; }
+    .hero { justify-content: flex-start; }
+    .hero-inner { text-align: left; max-width: 100%; }
+    footer { padding: 20px 24px; flex-direction: column; gap: 14px; text-align: center; }
     .footer-links { flex-wrap: wrap; justify-content: center; }
   }
 </style>
@@ -155,31 +136,26 @@
 <body>
 
 <nav>
-  <a href="/" class="nav-logo">Jamar Martin LLC</a>
+  <a href="/" class="nav-logo">Jamar Martin</a>
   <ul class="nav-links">
-    <li><a href="/ventures">Ventures</a></li>
     <li><a href="/contact">Contact</a></li>
   </ul>
 </nav>
 
-<div class="header-block">
-  <h1>Digital<br>Surplus</h1>
-  <p class="header-desc">Lead generation for B2B companies.</p>
-  <a href="https://digital.jamarmartin.com" class="btn">Explore Digital Surplus →</a>
-</div>
-
-<section class="overview">
-  <div class="section-label">Overview</div>
-  <p class="overview-text">
-    Jamar Martin LLC is a privately held operating company focused on the development, ownership, and management of independent ventures across digital and consumer markets.
-  </p>
-</section>
+<main>
+  <div class="hero">
+    <div class="hero-inner">
+      <p class="hero-text">
+        Jamar Martin LLC is a privately held operating company focused on the development, ownership, and management of independent ventures across digital and consumer markets.
+      </p>
+      <p class="venture-line">Operating venture: <a href="https://digital.jamarmartin.com">Digital Surplus</a></p>
+    </div>
+  </div>
+</main>
 
 <footer>
-  <span>© 2026 Jamar Martin LLC. All rights reserved.</span>
+  <span>&copy; 2026 Jamar Martin LLC. All rights reserved.</span>
   <div class="footer-links">
-    <a href="/ventures">Ventures</a>
-    <a href="/contact">Contact</a>
     <a href="/privacy-policy">Privacy Policy</a>
     <a href="/terms-of-service">Terms of Service</a>
   </div>
