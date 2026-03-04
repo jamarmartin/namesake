@@ -354,8 +354,8 @@ ul li::before {
 
   /* Contact */
   .contact-main { grid-template-columns: 1fr; }
-  .contact-info { padding: 48px 24px; border-right: none; border-bottom: 1px solid var(--line); }
-  .contact-form { padding: 48px 24px; }
+  .contact-info { padding: 48px 24px; border-right: none; border-bottom: 1px solid var(--line); order: 2; }
+  .contact-form { padding: 48px 24px; order: 1; }
 
   /* Legal */
   .legal-main { padding: 48px 24px 80px; }
