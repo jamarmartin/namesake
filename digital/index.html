@@ -66,6 +66,7 @@ nav {
   flex-direction: column;
   gap: 28px;
   padding-bottom: 80px;
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 .hero-eyebrow {
   font-family: 'DM Mono', monospace;
@@ -96,9 +97,9 @@ nav {
   transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .slide {
-  flex: 0 0 420px;
-  height: 520px;
-  border-radius: 20px;
+  flex: 0 0 340px;
+  height: 430px;
+  border-radius: 16px;
   overflow: hidden;
   position: relative;
   background: var(--card1);
@@ -115,6 +116,8 @@ nav {
 }
 .slide:nth-child(1) .slide-placeholder { background: linear-gradient(145deg, #1a1d35 0%, #0e1124 50%, #141830 100%); }
 .slide:nth-child(2) .slide-placeholder { background: linear-gradient(145deg, #1a1a30 0%, #10102a 50%, #16163a 100%); }
+.slide:nth-child(3) .slide-placeholder { background: linear-gradient(145deg, #141c35 0%, #0c1428 50%, #10182e 100%); }
+.slide:nth-child(4) .slide-placeholder { background: linear-gradient(145deg, #1c1430 0%, #120c24 50%, #180e2e 100%); }
 .slide-grid {
   position: absolute;
   inset: 0;
@@ -136,6 +139,8 @@ nav {
 }
 .slide:nth-child(1) .slide-glow { background: var(--accent); }
 .slide:nth-child(2) .slide-glow { background: #7040d0; }
+.slide:nth-child(3) .slide-glow { background: #2060c0; }
+.slide:nth-child(4) .slide-glow { background: #5030a0; }
 .slide-tag {
   position: absolute;
   top: 28px;
@@ -406,8 +411,7 @@ footer a:hover { color: var(--ink); }
         </div>
       </div>
 
-   
-  
+      <!-- SLIDE 3 — ACTIVE -->
       <div class="slide">
         <div class="slide-placeholder">
           <div class="slide-grid"></div>
@@ -420,7 +424,7 @@ footer a:hover { color: var(--ink); }
         </div>
       </div>
 
-      
+      <!-- SLIDE 4 — ACTIVE -->
       <div class="slide">
         <div class="slide-placeholder">
           <div class="slide-grid"></div>
@@ -432,7 +436,6 @@ footer a:hover { color: var(--ink); }
           </div>
         </div>
       </div>
-      
 
     </div>
   </div>
@@ -441,11 +444,11 @@ footer a:hover { color: var(--ink); }
 <div class="carousel-controls">
   <button class="carousel-btn" id="prev">&#8592;</button>
   <button class="carousel-btn" id="next">&#8594;</button>
-  <!-- ** DOTS: 2 active. To add slides 3 & 4, uncomment above HTML and update totalSlides in JS -->
-  
   <div class="carousel-dots" id="dots">
     <div class="dot active" data-index="0"></div>
     <div class="dot" data-index="1"></div>
+    <div class="dot" data-index="2"></div>
+    <div class="dot" data-index="3"></div>
   </div>
   <span class="slide-count" id="count">01 / 04</span>
 </div>
@@ -533,9 +536,10 @@ footer a:hover { color: var(--ink); }
   // CAROUSEL
   const track   = document.getElementById('track');
   const countEl = document.getElementById('count');
-  // ** TO ENABLE 4 SLIDES: change totalSlides to 4 and uncomment slides 3 & 4 in HTML above
-  const totalSlides = 2;
+  const totalSlides = 4;
   let current = 0;
+
+  const heroLeft = document.querySelector('.hero-left');
 
   function goTo(i) {
     current = Math.max(0, Math.min(i, totalSlides - 1));
@@ -546,6 +550,13 @@ footer a:hover { color: var(--ink); }
     );
     countEl.textContent =
       String(current + 1).padStart(2,'0') + ' / ' + String(totalSlides).padStart(2,'0');
+    if (current === 0) {
+      heroLeft.style.opacity = '1';
+      heroLeft.style.transform = 'translateY(0)';
+    } else {
+      heroLeft.style.opacity = '0';
+      heroLeft.style.transform = 'translateY(8px)';
+    }
   }
 
   document.getElementById('next').onclick = () => goTo(current + 1);
@@ -576,5 +587,3 @@ footer a:hover { color: var(--ink); }
 
 </body>
 </html>
-
-
