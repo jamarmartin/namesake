@@ -1,1 +1,362 @@
+/* ════════════════════════════════════════════════
+   main.css — jamarmartin.com
+   Shared across: index, contact, privacy-policy, terms-of-service
+   ════════════════════════════════════════════════ */
 
+/* ── RESET ───────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── VARIABLES ───────────────────────────────────── */
+:root {
+  --bg: #1a1a1c;
+  --ink: #e8e6e2;
+  --muted: #666462;
+  --accent: #7b7ef0;
+  --line: #2a2a2d;
+}
+
+/* ── BASE ────────────────────────────────────────── */
+html, body { height: 100%; }
+
+body {
+  font-family: 'Cormorant Garamond', serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a { color: var(--ink); }
+
+/* ── NAV ─────────────────────────────────────────── */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 48px;
+  border-bottom: 1px solid var(--line);
+}
+
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.nav-links { display: flex; gap: 32px; list-style: none; }
+
+.nav-links a {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 17px;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active { color: var(--ink); }
+
+/* ── FOOTER ──────────────────────────────────────── */
+footer {
+  border-top: 1px solid var(--line);
+  padding: 24px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.07em;
+}
+
+footer a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+footer a:hover { color: var(--ink); }
+.footer-links { display: flex; gap: 28px; }
+
+
+/* ════════════════════════════════════════════════
+   INDEX PAGE
+   ════════════════════════════════════════════════ */
+
+.index-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 80px 48px;
+}
+
+.hero { display: flex; justify-content: flex-end; }
+
+.hero-inner {
+  max-width: 520px;
+  text-align: right;
+}
+
+.hero-text {
+  font-size: clamp(19px, 1.9vw, 23px);
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--ink);
+  margin-bottom: 28px;
+}
+
+.venture-line {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.venture-line a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 1px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.venture-line a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+
+/* ════════════════════════════════════════════════
+   CONTACT PAGE
+   ════════════════════════════════════════════════ */
+
+.contact-main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.contact-info {
+  padding: 72px 48px;
+  border-right: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.page-title {
+  font-size: clamp(40px, 5vw, 60px);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.info-block { display: flex; flex-direction: column; gap: 8px; }
+
+.info-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.info-value {
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+.info-value a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 1px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.info-value a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.disclosure {
+  margin-top: auto;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.contact-form {
+  padding: 72px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.form-group { display: flex; flex-direction: column; gap: 10px; }
+
+label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+input, textarea {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--line);
+  padding: 10px 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px;
+  font-weight: 300;
+  color: var(--ink);
+  outline: none;
+  width: 100%;
+  transition: border-color 0.2s;
+  resize: none;
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--muted);
+  font-style: italic;
+}
+
+input:focus, textarea:focus { border-bottom-color: var(--muted); }
+
+textarea { height: 110px; }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 28px;
+  background: var(--ink);
+  color: var(--bg);
+  border: none;
+  cursor: pointer;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: background 0.2s, gap 0.2s;
+  align-self: flex-start;
+  margin-top: 4px;
+}
+
+.btn:hover { background: var(--accent); gap: 20px; }
+
+
+/* ════════════════════════════════════════════════
+   LEGAL PAGES (privacy-policy, terms-of-service)
+   ════════════════════════════════════════════════ */
+
+.legal-body { font-size: 18px; line-height: 1.7; }
+
+.legal-main {
+  flex: 1;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 80px 48px 100px;
+  width: 100%;
+}
+
+.page-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+.last-updated {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 64px;
+}
+
+h1 {
+  font-size: clamp(40px, 5vw, 60px);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+
+h2 {
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--ink);
+  margin-top: 56px;
+  margin-bottom: 16px;
+  padding-top: 56px;
+  border-top: 1px solid var(--line);
+}
+
+h2:first-of-type { border-top: none; padding-top: 0; }
+
+p {
+  font-size: 19px;
+  font-weight: 300;
+  color: #b0aea9;
+  margin-bottom: 18px;
+  line-height: 1.75;
+}
+
+ul { list-style: none; margin-bottom: 18px; }
+
+ul li {
+  font-size: 19px;
+  font-weight: 300;
+  color: #b0aea9;
+  padding: 5px 0 5px 22px;
+  position: relative;
+  line-height: 1.75;
+}
+
+ul li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 300;
+}
+
+
+/* ════════════════════════════════════════════════
+   RESPONSIVE
+   ════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  nav { padding: 20px 24px; }
+  footer { padding: 20px 24px; flex-direction: column; gap: 14px; text-align: center; }
+  .footer-links { flex-wrap: wrap; justify-content: center; }
+
+  /* Index */
+  .index-main { padding: 60px 24px; }
+  .hero { justify-content: flex-start; }
+  .hero-inner { text-align: left; max-width: 100%; }
+
+  /* Contact */
+  .contact-main { grid-template-columns: 1fr; }
+  .contact-info { padding: 48px 24px; border-right: none; border-bottom: 1px solid var(--line); }
+  .contact-form { padding: 48px 24px; }
+
+  /* Legal */
+  .legal-main { padding: 48px 24px 80px; }
+}
