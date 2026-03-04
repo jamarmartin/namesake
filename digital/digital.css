@@ -346,7 +346,7 @@ nav {
   transition: color 0.5s;
   user-select: none;
 }
-.inquire:hover .inquire-text { color: #52525a; }
+.inquire:hover .inquire-text { color: #7b7ef0; }
 .inquire-btn {
   display: inline-flex;
   align-items: center;
