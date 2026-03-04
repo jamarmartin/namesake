@@ -366,6 +366,9 @@ footer {
 footer a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
 footer a:hover { color: var(--ink); }
 .footer-links { display: flex; gap: 28px; }
+@media (min-width: 1200px) {
+  .slide { flex: 0 0 480px; height: 580px; }
+}
 @media (max-width: 900px) {
   nav { padding: 20px 24px; }
   .hero { grid-template-columns: 1fr; gap: 40px; padding: 60px 24px 0; min-height: auto; }
@@ -586,6 +589,14 @@ footer a:hover { color: var(--ink); }
   document.getElementById('dots').addEventListener('click', e => {
     if (e.target.dataset.index !== undefined) goTo(+e.target.dataset.index);
   });
+
+  // Touch swipe
+  let touchStartX = 0;
+  track.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+  track.addEventListener('touchend', e => {
+    const diff = touchStartX - e.changedTouches[0].screenX;
+    if (Math.abs(diff) > 40) diff > 0 ? goTo(current + 1) : goTo(current - 1);
+  }, { passive: true });
 
   // IOS TOGGLE
   const btns   = document.querySelectorAll('.toggle-btn');
