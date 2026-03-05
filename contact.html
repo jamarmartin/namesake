@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Jamar Martin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Jamar Martin</a>
+  <ul class="nav-links">
+    <li><a href="/contact" class="active">Contact</a></li>
+  </ul>
+</nav>
+
+<main class="contact-main">
+  <div class="contact-info">
+    <h1 class="page-title">Contact</h1>
+
+    <div class="info-block">
+      <div class="info-label">Email</div>
+      <div class="info-value"><a href="mailto:contact@jamarmartin.com">contact@jamarmartin.com</a></div>
+    </div>
+
+    <div class="info-block">
+      <div class="info-label">Phone</div>
+      <div class="info-value"><a href="tel:+17863218696">(786) 321-8696</a></div>
+    </div>
+
+    <div class="info-block">
+      <div class="info-label">Address</div>
+      <div class="info-value">
+        7901 4th St N, Ste 300<br>
+        St. Petersburg, FL 33702<br>
+        United States
+      </div>
+    </div>
+
+    <p class="disclosure">All ventures are operated under Jamar Martin LLC.</p>
+  </div>
+
+  <div class="contact-form">
+    <form action="https://formspree.io/f/xnjbevbp" method="POST">
+      <div style="display:flex;flex-direction:column;gap:36px;">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your full name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="How can we help?" required></textarea>
+        </div>
+        <div>
+          <button type="submit" class="btn">Send Message &#x2192;</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</main>
+
+<footer>
+  <span>&copy; 2026 Jamar Martin LLC. All rights reserved.</span>
+  <div class="footer-links">
+    <a href="/privacy-policy">Privacy Policy</a>
+    <a href="/terms-of-service">Terms of Service</a>
+  </div>
+</footer>
+
+</body>
+</html>

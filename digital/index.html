@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DS+ — Digital Surplus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Mono:wght@300;400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/digital/digital.css">
+<script src="/digital/digital.js" defer></script>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">DS<span>+</span></a>
+  <div class="nav-right">
+    <a href="https://jamarmartin.com" class="nav-parent">← jamarmartin.com</a>
+    <a href="https://jamarmartin.com/contact.html" class="nav-cta">Get in touch</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">B2B Digital Marketing</div>
+    <h1 class="hero-title">Digital<br><em>Surplus</em></h1>
+    <p class="hero-sub">Lead generation and digital marketing for companies that need results.</p>
+  </div>
+
+  <div class="carousel-wrap">
+    <div class="carousel-track" id="track">
+
+      <!-- SLIDE 1 — ACTIVE -->
+      <div class="slide">
+        <div class="slide-placeholder">
+          <div class="slide-grid"></div>
+          <div class="slide-glow"></div>
+          <div class="slide-tag">Lead Generation</div>
+          <div class="slide-label">
+            <h3>Qualified B2B<br>Pipeline</h3>
+            <p>Consistent, targeted outreach</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 2 — ACTIVE -->
+      <div class="slide">
+        <div class="slide-placeholder">
+          <div class="slide-grid"></div>
+          <div class="slide-glow"></div>
+          <div class="slide-tag">Web Services</div>
+          <div class="slide-label">
+            <h3>Digital<br>Infrastructure</h3>
+            <p>Built to scale with your business</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 3 — ACTIVE -->
+      <div class="slide">
+        <div class="slide-placeholder">
+          <div class="slide-grid"></div>
+          <div class="slide-glow"></div>
+          <div class="slide-tag">SEO</div>
+          <div class="slide-label">
+            <h3>Organic<br>Growth</h3>
+            <p>Long-term search visibility</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 4 — ACTIVE -->
+      <div class="slide">
+        <div class="slide-placeholder">
+          <div class="slide-grid"></div>
+          <div class="slide-glow"></div>
+          <div class="slide-tag">Automation</div>
+          <div class="slide-label">
+            <h3>Systems That<br>Run 24/7</h3>
+            <p>Pipeline that never sleeps</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="carousel-controls">
+  <button class="carousel-btn" id="prev">&#8592;</button>
+  <button class="carousel-btn" id="next">&#8594;</button>
+  <div class="carousel-dots" id="dots">
+    <div class="dot active" data-index="0"></div>
+    <div class="dot" data-index="1"></div>
+    <div class="dot" data-index="2"></div>
+    <div class="dot" data-index="3"></div>
+  </div>
+  <span class="slide-count" id="count">01 / 04</span>
+</div>
+
+<div class="divider"></div>
+
+<section class="services">
+  <div class="services-header">
+    <div class="services-eyebrow">What we do</div>
+    <h2 class="services-title">Our <em>services</em></h2>
+  </div>
+
+  <div class="toggle-wrap">
+    <div class="toggle" id="toggle">
+      <div class="toggle-slider" id="slider"></div>
+      <button class="toggle-btn active" data-panel="design">Design</button>
+      <button class="toggle-btn" data-panel="marketing">Marketing</button>
+    </div>
+  </div>
+
+  <div class="cards-panel active" id="panel-design">
+    <div class="card reveal">
+      <div class="card-img">
+        <div class="card-glow"></div>
+        <div class="card-img-label">Placeholder</div>
+      </div>
+      <div class="card-body">
+        <div class="card-title">Website Design</div>
+        <div class="card-sub">Custom design built around your brand and conversion goals.</div>
+      </div>
+    </div>
+    <div class="card reveal">
+      <div class="card-img">
+        <div class="card-glow"></div>
+        <div class="card-img-label">Placeholder</div>
+      </div>
+      <div class="card-body">
+        <div class="card-title">Website Audit</div>
+        <div class="card-sub">A full review of your site's performance, UX, and opportunities.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cards-panel" id="panel-marketing">
+    <div class="card reveal">
+      <div class="card-img">
+        <div class="card-glow"></div>
+        <div class="card-img-label">Placeholder</div>
+      </div>
+      <div class="card-body">
+        <div class="card-title">Automated Lead Generation</div>
+        <div class="card-sub">Systems that run 24/7 to fill your pipeline with qualified prospects.</div>
+      </div>
+    </div>
+    <div class="card reveal">
+      <div class="card-img">
+        <div class="card-glow"></div>
+        <div class="card-img-label">Placeholder</div>
+      </div>
+      <div class="card-body">
+        <div class="card-title">SEO</div>
+        <div class="card-sub">Organic search strategy that compounds and drives intent-based traffic.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="inquire">
+  <div class="inquire-text inquire-reveal">Inquire.</div>
+  <a href="https://jamarmartin.com/contact.html" class="inquire-btn">Start a conversation &#8594;</a>
+</section>
+
+<footer>
+  <div class="footer-left">
+    <div class="footer-brand"><strong>Digital Surplus</strong> &mdash; operated by Jamar Martin LLC</div>
+    <div>&copy; 2026 Jamar Martin LLC. All rights reserved.</div>
+  </div>
+  <div class="footer-links">
+    <a href="https://jamarmartin.com/privacy-policy.html">Privacy Policy</a>
+    <a href="https://jamarmartin.com/terms-of-service.html">Terms of Service</a>
+  </div>
+</footer>
+  
+</body>
+</html>
+
+
+

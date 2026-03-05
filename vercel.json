@@ -1,0 +1,15 @@
+{
+  "cleanUrls": true,
+  "routes": [
+    {
+      "src": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "digital.jamarmartin.com"
+        }
+      ],
+      "dest": "/digital/$1"
+    }
+  ]
+}
