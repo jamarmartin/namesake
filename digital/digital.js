@@ -42,6 +42,18 @@ track.addEventListener('touchend', e => {
   if (Math.abs(diff) > 40) diff > 0 ? goTo(current + 1) : goTo(current - 1);
 }, { passive: true });
 
+// ── SCROLL REVEAL ─────────────────────────────────────
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.reveal, .inquire-reveal').forEach(el => revealObserver.observe(el));
+
 // ── IOS TOGGLE ───────────────────────────────────────
 const btns   = document.querySelectorAll('.toggle-btn');
 const slider = document.getElementById('slider');
