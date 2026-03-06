@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Barlow:wght@400;500;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/digital/digital.css">
+  <style>
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --black: #111110;
+  --dark: #1a1a1a;
+  --grey: #1e1e1c;
+  --mid: #2a2a28;
+  --muted: #888784;
+  --accent: #caf291;
+  --ink: #f5f4f0;
+  --white: #f5f4f0;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Barlow', sans-serif; background: #d6eaff; color: var(--ink); overflow-x: hidden; }
+a { text-decoration: none; color: inherit; }
+
+.nav-wrap {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 100; transition: all 0.35s ease;
+}
+nav {
+  width: 100%; background: transparent;
+  border-bottom: 1px solid transparent; border-radius: 0;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 48px; height: 64px;
+  box-shadow: none; transition: all 0.35s ease; position: relative;
+}
+.nav-wrap.scrolled {
+  top: 16px; display: flex; justify-content: center; pointer-events: none;
+}
+.nav-wrap.scrolled nav {
+  pointer-events: all; width: 820px; max-width: calc(100vw - 40px);
+  background: #ffffff; border: 1px solid #e0e0dc;
+  border-radius: 100px; padding: 0 8px 0 28px; height: 54px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.15);
+}
+.nav-wrap.scrolled .nav-logo { color: #111110; }
+.nav-wrap.scrolled .nav-logo span { color: #111110; }
+.nav-wrap.scrolled .nav-center a { color: #888; }
+.nav-wrap.scrolled .nav-center a:hover, .nav-wrap.scrolled .nav-center a.active { color: #111110; }
+.nav-wrap.scrolled .nav-back { display: none; }
+.nav-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 900; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink); transition: color 0.35s; }
+.nav-logo span { color: var(--accent); transition: color 0.35s; }
+.nav-center { position: absolute; left: 50%; transform: translateX(-50%); display: flex; gap: 40px; }
+.nav-center a { font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); transition: color 0.2s; }
+.nav-center a:hover, .nav-center a.active { color: var(--ink); }
+.nav-right { display: flex; align-items: center; gap: 20px; }
+.nav-wrap.light-hero .nav-logo { color: var(--black); }
+.nav-wrap.light-hero .nav-logo span { color: var(--black); }
+.nav-wrap.light-hero .nav-center a { color: #555; }
+.nav-wrap.light-hero .nav-center a:hover,
+.nav-wrap.light-hero .nav-center a.active { color: var(--black); }
+.nav-wrap.light-hero .nav-back { color: #777; }
+.nav-wrap.light-hero .nav-back:hover { color: var(--black); }
+
+.nav-back { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.1em; color: var(--muted); transition: color 0.2s; }
+.nav-back:hover { color: var(--ink); }
+.nav-cta { background: var(--accent); color: var(--black); padding: 11px 24px; border-radius: 100px; font-weight: 700; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; transition: background 0.2s; white-space: nowrap; }
+.nav-cta:hover { background: #caf291; }
+
+/* PAGE HEADER */
+body { padding-top: 64px; }
+.page-header {
+  background: #d6eaff;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #c0d8f5;
+}
+.page-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.page-tag {
+  display: inline-block;
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px; font-weight: 800;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 7px 16px; border-radius: 6px;
+  align-self: flex-start;
+}
+.page-header h1 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(64px, 8vw, 108px);
+  font-weight: 900; text-transform: uppercase; line-height: 0.93;
+  color: var(--black);
+}
+.page-header h1 span { color: var(--accent); }
+.page-header p { font-size: 17px; color: #555; max-width: 420px; line-height: 1.75; }
+
+.page-header-right {
+  position: relative;
+  height: 540px;
+}
+.hero-img-main {
+  position: absolute; top: 0; right: 0;
+  width: 72%; height: 360px;
+  border-radius: 20px; overflow: hidden; background: #ddd;
+}
+.hero-img-main img { width: 100%; height: 100%; object-fit: cover; }
+.hero-img-sub {
+  position: absolute; bottom: 0; left: 0;
+  width: 58%; height: 260px;
+  border-radius: 20px; overflow: hidden; background: #ccc;
+  border: 5px solid #d6eaff;
+}
+.hero-img-sub img { width: 100%; height: 100%; object-fit: cover; }
+
+
+.underline-word { position: relative; display: inline-block; }
+.word-underline {
+  position: absolute; bottom: -14px; left: 0;
+  width: 100%; height: auto; pointer-events: none;
+}
+
+/* SERVICE SECTIONS */
+.service-section {
+  padding: 100px 0;
+}
+.service-section-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 80px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 120px;
+  align-items: center;
+}
+@media (max-width: 1500px) { .service-section-inner { padding: 0 60px; } }
+@media (max-width: 900px) { .service-section-inner { grid-template-columns: 1fr; padding: 0 24px; gap: 40px; } }
+
+#s-leads { background: var(--dark); color: var(--ink); }
+#s-web   { background: var(--white); color: var(--black); }
+#s-seo   { background: var(--dark); color: var(--ink); }
+#s-auto  { background: var(--white); color: var(--black); }
+
+#s-leads .s-num, #s-seo .s-num { color: rgba(255,255,255,0.1); }
+#s-leads .s-label, #s-seo .s-label { color: var(--muted); }
+#s-leads .s-title, #s-seo .s-title { color: var(--ink); }
+#s-leads .s-body, #s-seo .s-body { color: var(--muted); }
+#s-leads .s-bullets li, #s-seo .s-bullets li { color: var(--muted); }
+#s-web .s-num, #s-auto .s-num { color: rgba(0,0,0,0.07); }
+#s-web .s-label, #s-auto .s-label { color: #999; }
+#s-web .s-title, #s-auto .s-title { color: var(--black); }
+#s-web .s-body, #s-auto .s-body { color: #555; }
+#s-web .s-bullets li, #s-auto .s-bullets li { color: #666; }
+
+/* Alternate image side — light sections flip visual left */
+#s-web .s-visual, #s-auto .s-visual { order: -1; }
+
+.s-content { display: flex; flex-direction: column; gap: 20px; }
+
+.s-num {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 100px; font-weight: 900; line-height: 1;
+  color: rgba(0,0,0,0.07); letter-spacing: -0.03em;
+  margin-bottom: -16px;
+}
+
+.s-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #999;
+}
+
+.s-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(44px, 5.5vw, 72px);
+  font-weight: 900; text-transform: uppercase; line-height: 0.95;
+  color: var(--black);
+}
+
+.s-body { font-size: 17px; line-height: 1.75; color: #555; max-width: 440px; }
+
+.s-bullets { display: flex; flex-direction: column; gap: 10px; list-style: none; }
+.s-bullets li {
+  font-size: 15px; color: #666;
+  padding-left: 20px; position: relative; line-height: 1.55;
+}
+.s-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+
+
+
+.btn-dark-sm {
+  display: inline-block;
+  background: transparent;
+  color: var(--ink);
+  border: 1.5px solid rgba(255,255,255,0.35);
+  padding: 14px 28px; border-radius: 100px;
+  font-weight: 700; font-size: 13px;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  transition: border-color 0.2s, color 0.2s, transform 0.2s;
+}
+.btn-dark-sm:hover { border-color: var(--ink); color: var(--ink); transform: translateY(-2px); }
+
+.btn-accent-sm {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--accent); color: var(--black);
+  padding: 14px 28px; border-radius: 100px;
+  font-weight: 700; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase;
+  align-self: flex-start; transition: background 0.2s, transform 0.2s;
+}
+.btn-accent-sm:hover { background: #caf291; transform: translateY(-2px); }
+
+/* VISUAL BLOCKS */
+.s-visual {
+  border-radius: 24px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.s-visual-inner {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+}
+
+.s-visual-icon {
+  font-size: 80px;
+  opacity: 0.18;
+  position: absolute;
+}
+
+.s-visual-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 80px; font-weight: 900; text-transform: uppercase;
+  letter-spacing: -0.02em; line-height: 1; opacity: 0.08;
+  position: absolute;
+  color: var(--ink);
+}
+
+/* Visual backgrounds */
+#s-leads .s-visual { background: linear-gradient(135deg, #1a1d35 0%, #0e1124 100%); }
+#s-web .s-visual   { background: linear-gradient(135deg, #1e2818 0%, #0f1a0c 100%); }
+#s-seo .s-visual   { background: linear-gradient(135deg, #1a1d35 0%, #0a0c28 100%); }
+#s-auto .s-visual  { background: linear-gradient(135deg, #1c1430 0%, #0e0820 100%); }
+
+.visual-glow {
+  position: absolute;
+  width: 200px; height: 200px; border-radius: 50%;
+  filter: blur(60px); opacity: 0.3;
+}
+#s-leads .visual-glow { background: #4f6ef7; top: 20%; left: 30%; }
+#s-web .visual-glow   { background: var(--accent); top: 20%; left: 30%; }
+#s-seo .visual-glow   { background: #4f52e8; top: 20%; left: 30%; }
+#s-auto .visual-glow  { background: #8040c0; top: 20%; left: 30%; }
+
+/* CTA STRIP */
+.cta-strip {
+  background: #1a1a1a;
+  padding: 100px 0;
+  text-align: center;
+  border-top: 1px solid #2a2a28;
+}
+.cta-strip h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(56px, 8vw, 110px);
+  font-weight: 900; text-transform: uppercase; line-height: 0.92;
+  color: var(--ink); margin-bottom: 24px;
+}
+.cta-strip p { font-size: 18px; color: var(--muted); max-width: 440px; margin: 0 auto 44px; line-height: 1.7; }
+.btn-dark-lg {
+  display: inline-flex; align-items: center; gap: 12px;
+  background: var(--accent); color: var(--black);
+  padding: 18px 42px; border-radius: 100px;
+  font-weight: 700; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase;
+  transition: background 0.2s, transform 0.2s;
+}
+.btn-dark-lg:hover { background: #caf291; transform: translateY(-2px); }
+
+footer {
+  background: var(--black); border-top: 1px solid #222;
+  padding: 40px 0;
+}
+.footer-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 20px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.04em; }
+.footer-logo span { color: var(--accent); }
+.footer-meta { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted); letter-spacing: 0.07em; }
+.footer-links { display: flex; gap: 28px; }
+.footer-links a { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted); letter-spacing: 0.07em; transition: color 0.2s; }
+.footer-links a:hover { color: var(--ink); }
+
+/* REVEAL */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.rd1 { transition-delay: 0.12s; }
+.rd2 { transition-delay: 0.24s; }
+
+@media (max-width: 900px) {
+  nav { max-width: calc(100% - 32px); top: 8px; padding: 0 6px 0 20px; }
+  .nav-center { display: none; }
+  .page-header { padding: 60px 0; min-height: auto; }
+  .page-header > .container { grid-template-columns: 1fr !important; }
+  .page-header-right { height: 320px; }
+  .service-section { padding: 60px 0; }
+  .service-section:nth-child(even) .s-visual { order: 0; }
+  .s-visual { aspect-ratio: 16/9; }
+  .cta-strip { padding: 80px 0; }
+}
+
+/* ── CONTAINER ───────────────────────────────────── */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 56px;
+  width: 100%;
+}
+@media (max-width: 1300px) {
+  .container { padding: 0 48px; }
+}
+@media (max-width: 900px) {
+  .container { padding: 0 24px; }
+}
+
+/* Nav hide/show on scroll */
+.nav-wrap {
+  transition: top 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.nav-wrap.hidden {
+  top: -90px !important;
+}
+nav {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+  </style>
+  <title>Services — Digital Surplus</title>
+</head>
+<body>
+<div class="nav-wrap light-hero" id="mainNav"><nav>
+  <a href="/digital/" class="nav-logo">DS<span>+</span></a>
+  <div class="nav-center">
+    <a href="/digital/services" class="active">Services</a>
+  </div>
+  <div class="nav-right">
+    <a href="https://jamarmartin.com" class="nav-back">← jamarmartin.com</a>
+    <a href="/digital/contact" class="nav-cta">Let's Talk →</a>
+  </div>
+</nav></div>
+
+<!-- HEADER -->
+<div class="page-header"><div class="container" style="display:grid;grid-template-columns:1fr 1fr;gap:160px;align-items:center;width:100%;min-height:calc(100vh - 64px);padding-top:80px;padding-bottom:80px;">
+  <div class="page-header-left">
+    <div class="page-tag">Our Services</div>
+    <h1>Growth<br>Marketing.</h1>
+    <p>Lead generation, web design, SEO, and automation — built around your actual market and your real goals. Scroll to find what fits.</p>
+    <a href="/digital/contact" class="btn-dark-sm" style="margin-top:8px;">Let's Talk →</a>
+  </div>
+  <div class="page-header-right">
+    <div class="hero-img-main">
+      <img src="https://source.unsplash.com/KxVlKiqQObU/700x400" alt="">
+    </div>
+    <div class="hero-img-sub">
+      <img src="https://source.unsplash.com/26MJGnCM0Wc/500x300" alt="">
+    </div>
+  </div>
+</div></div>
+
+<!-- SERVICE 1 — LEAD GEN -->
+<section class="service-section" id="s-leads"><div class="service-section-inner">
+  <div class="s-content reveal">
+    <div class="s-num">01</div>
+    <div class="s-label">Lead Generation</div>
+    <div class="s-title">Qualified B2B Pipeline.</div>
+    <div class="s-body">Most pipelines dry up because the top of the funnel relies on referrals and luck. We build outbound and inbound systems that put qualified B2B prospects in front of you on a consistent, repeatable basis. You close the deals — we build the engine.</div>
+    <ul class="s-bullets">
+      <li>Targeted outbound sequences built around your ICP</li>
+      <li>Inbound lead capture and qualification flows</li>
+      <li>CRM integration and pipeline reporting</li>
+      <li>Ongoing optimization based on response data</li>
+    </ul>
+    <a href="/digital/contact" class="btn-dark-sm">Start Generating Leads →</a>
+  </div>
+  <div class="s-visual reveal rd1">
+    <div class="s-visual-inner">
+      <div class="visual-glow"></div>
+      <div class="s-visual-label">Leads</div>
+    </div>
+  </div></section>
+
+<!-- SERVICE 2 — WEB DESIGN -->
+<section class="service-section" id="s-web"><div class="service-section-inner">
+  <div class="s-content reveal">
+    <div class="s-num">02</div>
+    <div class="s-label">Web Design</div>
+    <div class="s-title">Built to Convert.</div>
+    <div class="s-body">A website that looks good but doesn't perform is a liability. Every design decision we make ties back to your business goals — from first impression to the form submit. We build sites that earn trust, communicate clearly, and convert the traffic you're working hard to get.</div>
+    <ul class="s-bullets">
+      <li>Custom design rooted in your brand and goals</li>
+      <li>Conversion-focused layouts and user flows</li>
+      <li>Mobile-first, fast, and technically sound</li>
+      <li>Website audits for existing sites</li>
+    </ul>
+    <a href="/digital/contact" class="btn-accent-sm">Talk Web Design →</a>
+  </div>
+  <div class="s-visual reveal rd1">
+    <div class="s-visual-inner">
+      <div class="visual-glow"></div>
+      <div class="s-visual-label">Design</div>
+    </div>
+  </div></section>
+
+<!-- SERVICE 3 — SEO -->
+<section class="service-section" id="s-seo"><div class="service-section-inner">
+  <div class="s-content reveal">
+    <div class="s-num">03</div>
+    <div class="s-label">Search Engine Optimisation</div>
+    <div class="s-title">Rank Higher.<br>Grow Faster.</div>
+    <div class="s-body">SEO allows you to attract high-intent visitors that align with your business — driving the right engagement to your online storefront and boosting visibility where it counts. We do this through targeted keywords so you can rank and outperform competitors, delivering a measurable return on investment that compounds over time.</div>
+    <ul class="s-bullets">
+      <li>Keyword research aligned to buyer intent</li>
+      <li>Technical SEO audits and on-page optimization</li>
+      <li>Topical authority building for long-term rankings</li>
+      <li>Competitor analysis and gap identification</li>
+    </ul>
+    <a href="/digital/contact" class="btn-dark-sm">Talk SEO →</a>
+  </div>
+  <div class="s-visual reveal rd1">
+    <div class="s-visual-inner">
+      <div class="visual-glow"></div>
+      <div class="s-visual-label">SEO</div>
+    </div>
+  </div></section>
+
+<!-- SERVICE 4 — AUTOMATION -->
+<section class="service-section" id="s-auto"><div class="service-section-inner">
+  <div class="s-content reveal">
+    <div class="s-num">04</div>
+    <div class="s-label">Marketing Automation</div>
+    <div class="s-title">Systems That Run 24/7.</div>
+    <div class="s-body">Your pipeline shouldn't stop moving because your team logged off. We build automation that nurtures leads, scores prospects, and moves deals forward around the clock. Set it, scale it, and let the machine handle what doesn't require a human touch — so your team can focus on closing.</div>
+    <ul class="s-bullets">
+      <li>Lead nurture sequences and drip workflows</li>
+      <li>Prospect scoring and qualification automation</li>
+      <li>CRM and tool integrations</li>
+      <li>Performance tracking and flow optimization</li>
+    </ul>
+    <a href="/digital/contact" class="btn-accent-sm">Automate Your Pipeline →</a>
+  </div>
+  <div class="s-visual reveal rd1">
+    <div class="s-visual-inner">
+      <div class="visual-glow"></div>
+      <div class="s-visual-label">Auto</div>
+    </div>
+  </div></section>
+
+<!-- CTA -->
+<section class="cta-strip"><div class="container">
+  <h2 class="reveal">Let's Find Your<br><span class="underline-word">Surplus.<img src="/digital/img/underline.svg" class="word-underline" alt=""></span></h2>
+  <p class="reveal rd1">Tell us where you're at. We'll identify what's being left on the table and build a plan to go after it.</p>
+  <a href="/digital/contact" class="btn-dark-lg reveal rd2">Start the Conversation →</a>
+</div></section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-logo">DS<span>+</span></div>
+      <div class="footer-center">
+        <a href="https://jamarmartin.com" target="_blank">Operated by Jamar Martin LLC &copy; 2026</a>
+      </div>
+      <div class="footer-right">
+        <a href="https://jamarmartin.com/privacy-policy">Privacy</a>
+        <a href="https://jamarmartin.com/terms-of-service">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="/digital/digital.js"></script>
+</body>
+</html>
