@@ -497,6 +497,7 @@ footer {
 ══════════════════════════════════════════ */
 
 /* PAGE HEADER */
+body.page-services { background: #4f6ef7; }
 
 .page-header {
   background: #4f6ef7;
