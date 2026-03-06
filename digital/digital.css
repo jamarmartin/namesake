@@ -1036,3 +1036,16 @@ textarea { height: 140px; }
   .nav-center { display: none; }
   .hero-btns { flex-direction: column; align-items: center; }
 }
+/* ── SERVICES HERO BUTTON ────────────────────────── */
+.btn-hero {
+  display: inline-block;
+  align-self: flex-start;
+  background: #ffffff;
+  color: #111110;
+  border: none;
+  padding: 16px 36px; border-radius: 10px;
+  font-weight: 700; font-size: 14px;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  transition: background 0.2s, transform 0.2s;
+}
+.btn-hero:hover { background: var(--accent); transform: translateY(-2px); }
