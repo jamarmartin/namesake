@@ -6,276 +6,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Barlow:wght@400;500;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/digital/digital.css">
-  <style>
-/* ── CONTAINER ───────────────────────────────────── */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 56px;
-  width: 100%;
-}
-@media (max-width: 1300px) { .container { padding: 0 48px; } }
-@media (max-width: 900px)  { .container { padding: 0 24px; } }
-
-/* ── CONTACT MAIN ────────────────────────────────── */
-.contact-main {
-  background: var(--black);
-  padding: 120px 0 140px;
-  min-height: auto;
-}
-
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: start;
-  padding-bottom: 0;
-}
-
-/* LEFT */
-.contact-left { display: flex; flex-direction: column; gap: 0; }
-
-.contact-tag {
-  display: inline-block;
-  background: transparent;
-  border: 2px solid #333;
-  color: var(--ink);
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 13px; font-weight: 800;
-  letter-spacing: 0.14em; text-transform: uppercase;
-  padding: 6px 14px; border-radius: 6px;
-  margin-bottom: 28px; align-self: flex-start;
-}
-
-.contact-left h1 {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: clamp(72px, 9vw, 120px);
-  font-weight: 900; text-transform: uppercase;
-  line-height: 0.88; letter-spacing: -0.01em;
-  color: var(--ink);
-  margin-bottom: 32px;
-}
-
-.contact-left h1 span { color: var(--accent); }
-
-.contact-left p {
-  font-size: 17px; color: var(--muted);
-  line-height: 1.7; max-width: 400px;
-  margin-bottom: 56px;
-}
-
-.contact-info-row {
-  display: flex;
-  gap: 48px;
-  flex-wrap: wrap;
-}
-
-.info-col { display: flex; flex-direction: column; gap: 8px; }
-
-.info-label {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 13px; font-weight: 800;
-  letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--ink);
-}
-
-.info-val {
-  font-size: 15px; color: var(--muted);
-  border-bottom: 1px solid #333; padding-bottom: 2px;
-  transition: color 0.2s, border-color 0.2s;
-  display: inline-block;
-}
-.info-val:hover { color: var(--ink); border-color: var(--muted); }
-
-/* RIGHT — FORM */
-.contact-right { padding-top: 8px; }
-
-.form-title {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 28px; font-weight: 800;
-  text-transform: uppercase; letter-spacing: 0.06em;
-  color: var(--ink); margin-bottom: 32px;
-}
-
-.form-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-
-.form-group { display: flex; flex-direction: column; gap: 8px; }
-.form-group.full { grid-column: 1 / -1; }
-
-label {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px; letter-spacing: 0.18em;
-  text-transform: uppercase; color: var(--muted);
-}
-
-input, textarea, select {
-  background: var(--dark);
-  border: 1px solid #2a2a28;
-  border-radius: 10px;
-  padding: 14px 18px;
-  font-family: 'Barlow', sans-serif;
-  font-size: 16px; color: var(--ink);
-  outline: none; width: 100%;
-  transition: border-color 0.2s;
-  resize: none; appearance: none;
-}
-input::placeholder, textarea::placeholder { color: #444; }
-input:focus, textarea:focus, select:focus { border-color: #555; }
-textarea { height: 140px; }
-
-.form-submit-row {
-  display: flex; align-items: center;
-  gap: 24px; margin-top: 8px;
-}
-
-.submit-btn {
-  background: transparent;
-  color: var(--accent);
-  border: 1.5px solid var(--accent);
-  padding: 17px 40px;
-  border-radius: 100px;
-  font-family: 'Barlow', sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
-  white-space: nowrap;
-}
-.submit-btn:hover { background: #caf291; transform: translateY(-2px); }
-
-.form-note {
-  font-size: 13px; color: var(--muted); line-height: 1.5;
-}
-.form-note a { color: var(--muted); border-bottom: 1px solid #444; padding-bottom: 1px; }
-.form-note a:hover { color: var(--ink); }
-
-/* ── FAQ ─────────────────────────────────────────── */
-.faq-section {
-  background: var(--black);
-  padding: 160px 0 140px;
-}
-
-.faq-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: start;
-}
-
-.faq-left { display: flex; flex-direction: column; gap: 24px; }
-
-.faq-left h2 {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: clamp(56px, 7vw, 88px);
-  font-weight: 900; text-transform: uppercase;
-  line-height: 0.92; color: var(--ink);
-}
-
-.faq-left p {
-  font-size: 17px; color: var(--muted);
-  line-height: 1.7; max-width: 360px;
-}
-
-.faq-review-btn {
-  display: inline-block;
-  border: 2px solid #333;
-  color: var(--ink);
-  padding: 14px 28px;
-  border-radius: 100px;
-  font-weight: 700; font-size: 13px;
-  letter-spacing: 0.1em; text-transform: uppercase;
-  align-self: flex-start;
-  transition: border-color 0.2s, color 0.2s;
-}
-.faq-review-btn:hover { border-color: var(--accent); color: var(--accent); }
-
-.faq-list { display: flex; flex-direction: column; gap: 0; }
-
-.faq-item {
-  border-top: 1px solid #222;
-  overflow: hidden;
-}
-.faq-item:last-child { border-bottom: 1px solid #222; }
-
-.faq-question {
-  width: 100%;
-  background: none; border: none; cursor: pointer;
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 22px 0;
-  gap: 20px;
-  text-align: left;
-}
-
-.faq-q-text {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 18px; font-weight: 800;
-  text-transform: uppercase; letter-spacing: 0.05em;
-  color: var(--ink); line-height: 1.2;
-}
-
-.faq-icon {
-  font-size: 22px; color: var(--accent);
-  font-weight: 300; flex-shrink: 0;
-  transition: transform 0.3s ease;
-  line-height: 1;
-}
-
-.faq-item.open .faq-icon { transform: rotate(45deg); }
-
-.faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.35s ease, padding 0.35s ease;
-  padding-bottom: 0;
-}
-
-.faq-item.open .faq-answer {
-  max-height: 200px;
-  padding-bottom: 20px;
-}
-
-.faq-answer p {
-  font-size: 15px; color: var(--muted); line-height: 1.7;
-}
-
-@media (max-width: 900px) {
-  .faq-inner { grid-template-columns: 1fr; gap: 48px; }
-}
-
-  to   { transform: translateX(0); }
-}
-
-  to   { transform: translateX(0); }
-}
-/* ── RESPONSIVE ──────────────────────────────────── */
-@media (max-width: 900px) {
-  nav { padding: 0 24px; }
-  .nav-center { display: none; }
-  .contact-grid { grid-template-columns: 1fr; gap: 56px; padding-bottom: 60px; }
-  .contact-main { padding: 60px 0 0; }
-  .form-grid { grid-template-columns: 1fr; }
-  .form-submit-row { flex-direction: column; align-items: flex-start; }
-}
-
-/* Nav hide/show on scroll */
-.nav-wrap {
-  transition: top 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.nav-wrap.hidden {
-  top: -90px !important;
-}
-nav {
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-
-  </style>
   <title>Contact — Digital Surplus</title>
 </head>
 <body>
@@ -308,7 +38,7 @@ nav {
           </div>
           <div class="info-col">
             <div class="info-label">Send an Email</div>
-            <a href="/cdn-cgi/l/email-protection#f3979a949a87929fb399929e92819e9281879a9ddd909c9e" class="info-val"><span class="__cf_email__" data-cfemail="e2868b858b96838ea288838f83908f8390968b8ccc818d8f">[email&#160;protected]</span></a>
+            <a href="mailto:digital@jamarmartin.com" class="info-val">digital@jamarmartin.com</a>
           </div>
           <div class="info-col">
             <div class="info-label">Office In</div>
@@ -431,7 +161,7 @@ nav {
   </div>
 </section>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+
 
 <!-- FOOTER -->
 <footer>
@@ -446,6 +176,7 @@ nav {
     </div>
   </div>
 </footer>
+
 <script src="/digital/digital.js"></script>
 <script>
 document.querySelectorAll('.faq-question').forEach(btn => {
