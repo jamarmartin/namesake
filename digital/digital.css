@@ -73,6 +73,12 @@ nav {
 .nav-wrap.scrolled .nav-center a { color: #888; }
 .nav-wrap.scrolled .nav-center a:hover { color: #111; }
 .nav-wrap.scrolled .nav-back { display: none; }
+/* scrolled always wins over light-hero */
+.nav-wrap.scrolled.light-hero .nav-logo { color: #111; }
+.nav-wrap.scrolled.light-hero .nav-logo span { color: #111; }
+.nav-wrap.scrolled.light-hero .nav-center a { color: #888; }
+.nav-wrap.scrolled.light-hero .nav-back { display: none; }
+
 
 .nav-logo {
   font-family: 'Barlow Condensed', sans-serif;
