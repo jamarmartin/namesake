@@ -213,7 +213,7 @@
   .work-header { padding: 0 24px; }
   .work-placeholder { min-height: auto !important; }
 }
-/* ── RESULTS ─────────────────────────────────────── */
+/* ── RESULTS ─────────────────────────────────────── *
 .results-section {
   background: var(--white); color: var(--black);
   padding: 120px 48px;
@@ -236,6 +236,52 @@
 }
 .stat-label { font-size: 14px; color: var(--muted); font-weight: 500; line-height: 1.5; }
 
+/* ── COLOR BLOCKS ────────────────────────────────── */
+.color-blocks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.color-block {
+  padding: 80px 60px;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.color-block-1 { background: var(--grey); }
+.color-block-2 { background: var(--accent2); }
+.color-block-3 { background: var(--accent); }
+.color-block-4 { background: var(--mid); }
+
+.block-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px; letter-spacing: 0.18em;
+  color: rgba(255,255,255,0.3); margin-bottom: 24px;
+}
+.color-block-3 .block-num { color: rgba(0,0,0,0.35); }
+
+.block-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(36px, 4vw, 56px);
+  font-weight: 900; text-transform: uppercase;
+  line-height: 1; letter-spacing: 0.01em;
+  color: var(--ink); margin-bottom: 20px;
+}
+.color-block-3 .block-title { color: var(--black); }
+
+.block-desc {
+  font-size: 16px; font-weight: 400;
+  line-height: 1.65; color: rgba(255,255,255,0.55);
+  max-width: 320px;
+}
+.color-block-3 .block-desc { color: rgba(0,0,0,0.55); }
+    
 /* ── CTA ─────────────────────────────────────────── */
 .cta-section {
   background: #1a1a1a; padding: 120px 48px;
@@ -440,6 +486,39 @@
   </div>
 </section> -->
 
+  
+<!-- COLOR BLOCKS -->
+<div class="color-blocks">
+  <div class="color-block color-block-1 reveal">
+    <div>
+      <div class="block-num">01</div>
+      <div class="block-title">Scalable.<br>From Day One.</div>
+    </div>
+    <div class="block-desc">Every system we build is designed to grow with you — not break when you do. Infrastructure that handles volume, velocity, and the unexpected.</div>
+  </div>
+  <div class="color-block color-block-2 reveal reveal-delay-1">
+    <div>
+      <div class="block-num">02</div>
+      <div class="block-title">Future-<br>Proof.</div>
+    </div>
+    <div class="block-desc">Strategies built around long-term compounding returns — not quick spikes. We think in quarters, not short-term noise.</div>
+  </div>
+  <div class="color-block color-block-3 reveal reveal-delay-2">
+    <div>
+      <div class="block-num">03</div>
+      <div class="block-title">Results.<br>Not Excuses.</div>
+    </div>
+    <div class="block-desc">We measure what matters. Revenue, pipeline, qualified leads. Not impressions, not vanity metrics. Accountability is standard.</div>
+  </div>
+  <div class="color-block color-block-4 reveal reveal-delay-3">
+    <div>
+      <div class="block-num">04</div>
+      <div class="block-title">Built to<br>Grow.</div>
+    </div>
+    <div class="block-desc">Growth marketing built around your actual business model. We learn your ICP, your cycle, your market — and then we go to work.</div>
+  </div>
+</div>
+
 <!-- CTA -->
 <section class="cta-section">
   <h2 class="reveal">Let's Work<br>Together.</h2>
@@ -463,6 +542,7 @@
 <script src="/digital/digital.js"></script>
 </body>
 </html>
+
 
 
 
