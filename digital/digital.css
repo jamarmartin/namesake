@@ -64,7 +64,7 @@ nav {
   max-width: calc(100vw - 40px);
   background: #fff;
   border: 1px solid #e0e0dc;
-  border-radius: 100px;
+  border-radius: 16px;
   padding: 0 8px 0 28px;
   height: 54px;
   box-shadow: 0 8px 40px rgba(0,0,0,0.15);
@@ -106,7 +106,7 @@ nav {
 .nav-cta {
   background: var(--accent);
   color: var(--black) !important;
-  padding: 10px 22px; border-radius: 100px;
+  padding: 10px 22px; border-radius: 10px;
   font-family: 'Barlow', sans-serif;
   font-size: 13px; font-weight: 700;
   letter-spacing: 0.08em; text-transform: uppercase;
@@ -154,3 +154,63 @@ footer {
 .reveal-delay-3 { transition-delay: 0.3s; }
 .reveal-delay-4 { transition-delay: 0.4s; }
 
+
+/* ── GLOBAL BUTTONS ──────────────────────────────── */
+.btn-primary {
+  background: transparent;
+  color: var(--accent);
+  border: 1.5px solid var(--accent);
+  padding: 16px 36px; border-radius: 10px;
+  font-weight: 700; font-size: 14px;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  display: inline-block;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+.btn-primary:hover { background: var(--accent); color: var(--black); transform: translateY(-2px); }
+
+.btn-outline {
+  border: 1px solid #333; color: var(--muted);
+  padding: 16px 36px; border-radius: 10px;
+  font-weight: 600; font-size: 14px;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  display: inline-block;
+  transition: border-color 0.2s, color 0.2s;
+}
+.btn-outline:hover { border-color: var(--ink); color: var(--ink); }
+
+.btn-cta {
+  background: transparent; color: var(--accent);
+  border: 1.5px solid var(--accent);
+  padding: 18px 44px; border-radius: 10px;
+  font-weight: 700; font-size: 14px;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  display: inline-block;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+.btn-cta:hover { background: var(--accent); color: var(--black); transform: translateY(-2px); }
+
+.btn-results {
+  background: var(--accent); color: var(--black);
+  border: none; padding: 16px 36px; border-radius: 10px;
+  font-weight: 700; font-size: 14px;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  display: inline-block;
+  transition: background 0.2s, transform 0.2s;
+}
+.btn-results:hover { background: #b8e87a; transform: translateY(-2px); }
+
+/* ── GLOBAL MOBILE ───────────────────────────────── */
+@media (max-width: 900px) {
+  nav { padding: 0 24px; }
+  .nav-center { display: none; }
+  footer { padding: 28px 24px; }
+  .footer-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 0 24px;
+    gap: 16px;
+  }
+  .footer-right { justify-content: center; }
+  .footer-center { display: none; }
+  .hero-btns { flex-direction: column; align-items: center; }
+}
