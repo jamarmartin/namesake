@@ -113,6 +113,15 @@ nav {
 }
 .nav-cta:hover { background: #caf291; }
 
+
+/* ── NAV LIGHT HERO (use on dark/colored hero pages) ── */
+.nav-wrap.light-hero .nav-logo { color: var(--ink); }
+.nav-wrap.light-hero .nav-logo span { color: var(--ink); }
+.nav-wrap.light-hero .nav-center a { color: rgba(255,255,255,0.75); }
+.nav-wrap.light-hero .nav-center a:hover { color: #fff; }
+.nav-wrap.light-hero .nav-back { color: rgba(255,255,255,0.65); }
+.nav-wrap.light-hero .nav-back:hover { color: #fff; }
+
 /* ── FOOTER ──────────────────────────────────────── */
 footer {
   background: var(--black); border-top: 1px solid #222; padding: 40px 0;
