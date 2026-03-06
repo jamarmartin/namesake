@@ -1009,24 +1009,24 @@ textarea { height: 140px; }
   font-size: 15px; color: var(--muted); line-height: 1.7;
 }
 
-@media (max-width: 900px) {
-  .faq-inner { grid-template-columns: 1fr; gap: 48px; }
-}
 
-  to   { transform: translateX(0); }
-}
-
-  to   { transform: translateX(0); }
-}
-/* ── RESPONSIVE ──────────────────────────────────── */
+/* ── CONTACT RESPONSIVE ─────────────────────────── */
 @media (max-width: 900px) {
-  
-  
-  .contact-grid { grid-template-columns: 1fr; gap: 56px; padding-bottom: 60px; }
-  .contact-main {
-  padding-top: 64px; padding: 60px 0 0; }
+  .contact-main { padding: 100px 0 60px; }
+  .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+  .contact-left h1 { font-size: clamp(52px, 12vw, 80px); }
+  .contact-left p { margin-bottom: 32px; }
+  .contact-info-row { gap: 28px; }
   .form-grid { grid-template-columns: 1fr; }
   .form-submit-row { flex-direction: column; align-items: flex-start; }
+  .faq-inner { grid-template-columns: 1fr; gap: 48px; }
+  .faq-section { padding: 80px 0; }
+}
+@media (max-width: 480px) {
+  .contact-main { padding: 90px 0 40px; }
+  .contact-grid { gap: 36px; }
+  .contact-info-row { flex-direction: column; gap: 20px; }
+  .submit-btn { width: 100%; text-align: center; }
 }
 
 /* Nav hide/show on scroll */
