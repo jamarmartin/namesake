@@ -732,10 +732,9 @@ footer {
 
 /* CTA STRIP */
 .cta-strip {
-  background: #1a1a1a;
+  background: var(--black);
   padding: 100px 0;
   text-align: center;
-  border-top: 1px solid #2a2a28;
 }
 .cta-strip h2 {
   font-family: 'Barlow Condensed', sans-serif;
