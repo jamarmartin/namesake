@@ -1065,7 +1065,7 @@ textarea { height: 140px; }
     gap: 16px;
   }
   .footer-right { justify-content: center; }
-  .footer-center { display: none; }
+  .footer-center { display: block; }
 }
 @media (max-width: 900px) {
   nav { padding: 0 24px; }
