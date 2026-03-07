@@ -366,7 +366,7 @@ footer {
 .work-img--tall   { aspect-ratio: 3/4; min-height: 520px; }
 .work-img--wide   { aspect-ratio: 4/3; min-height: 420px; }
 .work-img--square { aspect-ratio: 1/1; }
-.work-img--top    { object-position: 70% center; }
+.work-img--top    { object-position: 30% center; }
 
 .work-meta {
   padding: 24px 4px 0;
