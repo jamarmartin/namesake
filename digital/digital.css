@@ -559,52 +559,20 @@ footer {
 .page-header-right {
   position: relative;
 }
-/* HERO IMAGE CONTAINER */
-.page-header-right{
-  position: relative;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+.hero-img-main {
+  display: block;
+  width: calc(100% - 50px);
+  aspect-ratio: 3/2;
+  border-radius: 20px; overflow: hidden; background: rgba(255,255,255,0.15);
 }
-
-/* MAIN HERO IMAGE (background image) */
-.hero-img-main{
-  position: relative;
-  width: 620px;              /* larger visual width */
-  height: 420px;             /* keeps landscape feel */
-  border-radius: 22px;
-  overflow: hidden;
-  background: rgba(255,255,255,0.15);
-}
-
-.hero-img-main img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;         /* keeps image proportional */
-}
-
-/* SUB IMAGE (foreground card) */
-.hero-img-sub{
-  position: absolute;
-  bottom: -30px;
-  left: -40px;               /* move to bottom-left */
-  
-  width: 220px;              /* square shape */
-  height: 220px;
-
-  border-radius: 16px;
-  overflow: hidden;
-  background: rgba(255,255,255,0.1);
+.hero-img-main img { width: 100%; height: 100%; object-fit: cover; }
+.hero-img-sub {
+  position: absolute; bottom: -20px; left: -20px;
+  width: 200px; height: 200px;
+  border-radius: 14px; overflow: hidden; background: rgba(255,255,255,0.1);
   border: 4px solid #4f6ef7;
-
-  box-shadow: 0 25px 40px rgba(0,0,0,0.35);
 }
-
-.hero-img-sub img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+.hero-img-sub img { width: 100%; height: 100%; object-fit: cover; }
 
 
 .underline-word { position: relative; display: inline-block; }
@@ -784,16 +752,20 @@ footer {
 .rd2 { transition-delay: 0.24s; }
 
 @media (max-width: 900px) {
-  
-  
-  .page-header {
-  padding-top: 64px; padding: 60px 0; min-height: auto; }
+  .page-header { padding-top: 64px; padding: 60px 0; min-height: auto; }
   .page-header > .container { grid-template-columns: 1fr !important; }
-  .page-header-right { height: 320px; }
+  .page-header-right { height: auto; }
+  .hero-img-main { width: 100%; height: auto; }
+  .hero-img-sub { width: 140px; height: 140px; bottom: -16px; left: -16px; }
   .service-section { padding: 60px 0; }
   .service-section:nth-child(even) .s-visual { order: 0; }
   .s-visual { aspect-ratio: 16/9; }
   .cta-strip { padding: 80px 0; }
+}
+@media (max-width: 640px) {
+  .hero-img-main { border-radius: 14px; }
+  .hero-img-sub { width: 100px; height: 100px; bottom: -12px; left: -12px; border-radius: 10px; }
+  .page-header-grid { gap: 32px; }
 }
 
 /* ── CONTAINER ───────────────────────────────────── */
