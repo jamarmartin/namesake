@@ -61,22 +61,22 @@ nav {
   pointer-events: all;
   width: 820px;
   max-width: calc(100vw - 40px);
-  background: #fff;
-  border: 1px solid #e0e0dc;
+  background: #2e2e2b;
+  border: none;
   border-radius: 10px;
   padding: 0 8px 0 28px;
   height: 54px;
   box-shadow: 0 8px 40px rgba(0,0,0,0.15);
 }
-.nav-wrap.scrolled .nav-logo { color: #111; }
-.nav-wrap.scrolled .nav-logo span { color: #111; }
-.nav-wrap.scrolled .nav-center a { color: #888; }
-.nav-wrap.scrolled .nav-center a:hover { color: #111; }
+.nav-wrap.scrolled .nav-logo { color: var(--ink); }
+.nav-wrap.scrolled .nav-logo span { color: var(--accent); }
+.nav-wrap.scrolled .nav-center a { color: var(--muted); }
+.nav-wrap.scrolled .nav-center a:hover { color: var(--ink); }
 .nav-wrap.scrolled .nav-back { display: none; }
 /* scrolled always wins over light-hero */
-.nav-wrap.scrolled.light-hero .nav-logo { color: #111; }
-.nav-wrap.scrolled.light-hero .nav-logo span { color: #111; }
-.nav-wrap.scrolled.light-hero .nav-center a { color: #888; }
+.nav-wrap.scrolled.light-hero .nav-logo { color: var(--ink); }
+.nav-wrap.scrolled.light-hero .nav-logo span { color: var(--accent); }
+.nav-wrap.scrolled.light-hero .nav-center a { color: var(--muted); }
 .nav-wrap.scrolled.light-hero .nav-back { display: none; }
 
 
