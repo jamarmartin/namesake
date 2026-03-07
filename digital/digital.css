@@ -1,6 +1,6 @@
 /* ══════════════════════════════════════════
    Digital Surplus — Shared Stylesheet
-   /digital/digital.css
+   /digital.css
 ══════════════════════════════════════════ */
 
 
@@ -864,6 +864,7 @@ footer {
   display: inline-block;
 }
 .info-val:hover { color: var(--ink); border-color: var(--muted); }
+.info-val--static { cursor: default; pointer-events: none; }
 
 /* RIGHT — FORM */
 .contact-right { padding-top: 8px; }
@@ -911,6 +912,7 @@ textarea { height: 140px; }
 }
 
 .submit-btn {
+  margin-top: 16px;
   background: transparent;
   color: var(--accent);
   border: 1.5px solid var(--accent);
